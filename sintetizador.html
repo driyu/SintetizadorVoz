@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Síntesis de voz!!</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<h1>Ejemplo de síntesis de voz</h1>
+		<textarea placeholder="Inserta quí el texto" id="texto"  cols="60" rows="15"></textarea>
+		<button id="btn">Leer</button>
+	</div>
+</body>
+
+
+<script type="text/javascript">
+	'use strict';
+	document.addEventListener("DOMContentLoaded",inicio,false);
+	function inicio(){
+		let btn = document.getElementById("btn");
+		btn.addEventListener("click",leer, false);
+		function leer(){
+			let texto = document.getElementById("texto").value;		
+			const sintetizador = window.speechSynthesis;
+			const lectura = new SpeechSynthesisUtterance(texto);
+			sintetizador.speak(lectura);	
+		}
+	}
+
+</script>
+</html>
